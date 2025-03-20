@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Courses</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <style>
+     
+      body,html {
+        font-family: "Segoe UI", sans-serif;
+        background: #f8f9fa;
+       width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        
+        
+      }
+      header {
+        background: coral;
+        padding: 10px 20px;
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      
+
+      nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .navbar-toggler {
+        border: none;
+        color: white;
+      }
+      .courses {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 40px 0;
+      }
+      .courses h4 {
+        background: linear-gradient(135deg, #f2f223 0%, #d0bbc4 100%);
+        color: #fff;
+        padding: 15px;
+        margin: 0;
+        text-shadow: 1px 1px 2px #444;
+        border-radius: 10px;
+        text-align: center;
+      }
+      .courses p {
+        padding: 15px;
+        color: #444;
+      }
+      .course-card {
+        width: 420px;
+        background: rgb(245, 242, 242);
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(221, 11, 11, 0.892);
+        overflow: hidden;
+        position: relative;
+      }
+      .card-content {
+        padding: 20px;
+      }
+      .course-card:hover {
+        transition: transform 0.4s, box-shadow 0.4s;
+        background-color: antiquewhite;
+      }
+      .btn-show-topics,
+      .btn-learn {
+        background: rgb(29, 29, 215);
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 20px;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+
+      .btn-learn {
+        background-color: rgb(178, 22, 239);
+      }
+      .topics {
+        position: absolute;
+        inset: 0;
+        background: rgba(131, 160, 170, 0.95);
+        color: white;
+        padding: 20px;
+        display: none;
+        overflow-y: auto;
+        
+      }
+      .topics h4 {
+        margin-top: 0;
+       
+      }
+      .topics .close {
+        position: absolute;
+
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+        color: red;
+      }
+      .testimonials h2,
+      .faqs h2 {
+        font-weight: bold;
+        color: #111111;
+      }
+      .testimonials img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+        border: 3px solid #007bff;
+        display: flex;
+      }
+      .testimonial-card {
+        background: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .accordion-button:not(.collapsed) {
+        background-color: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+        color: white;
+      }
+
+      .accordion-button {
+        font-weight: bold;
+      }
+
+      .accordion-body {
+        background: #f9f9f9;
+      }
+ h3 {
+        text-align: center;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 55px;
+        color: rgb(223, 58, 140);
+      }
+      .logo {
+        font-size: 35px;
+        font-weight: bold;
+        color: white;
+        font-family: "Times New Roman", Times, serif;
+      }
+      .head{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 30px;
+        display: inline;
+        color: #1957f3b5;
+      }
+      
+      
+    </style>
+    <link rel="icon" type="image/png" href="71.png" />
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg navbar-light">
+        <h2 class="navbar-brand mb-0">
+        <i class="bi bi-book head"></i>  <p class="head">E-Learning Platform</p> <i class="bi bi-mortarboard-fill head"></i>
+        </h2>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+      </button>
+      <nav class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <a href="index.html"><i class="bi bi-house-door-fill"></i> Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+    <h3>Courses...<i class="bi bi-pencil" style="font-size: rem"></i></h3>
+    <section id="courses" class="courses">
+      <div class="course-card">
+        <div class="card-content">
+          <h4><i class="bi bi-code-slash"></i> Web Development</h4>
+          <p>
+            Become a professional web developer by mastering front-end and
+            back-end technologies. This course includes HTML, CSS, JavaScript,
+            Bootstrap, React.js, API integration, responsive design, and
+            deployment of live websites.
+          </p>
+          <h6 style="color: lightslategray">Credits: 3</h6>
+          <button class="btn-show-topics">Show Topics</button>
+          <button class="btn-learn">Learn More</button>
+        </div>
+        <div class="topics">
+          <span class="close">&times;</span>
+          <h4>Topics</h4>
+          <ul>
+            <li>HTML5, CSS3</li>
+            <li>JavaScript, DOM Manipulation</li>
+            <li>Bootstrap, Tailwind</li>
+            <li>React.js, APIs</li>
+            <li>Deployment  Hosting</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="card-content">
+          <h4><i class="bi bi-database"></i> DBMS</h4>
+          <p>
+            Understand the fundamentals of database systems, including ER
+            diagrams, SQL queries, relational algebra, normalization,
+            transactions, indexing, and PL/SQL concepts with practical query
+            writing.
+          </p>
+          <h6 style="color: lightslategray">Credits: 3</h6>
+          <button class="btn-show-topics">Show Topics</button>
+
+          <button class="btn-learn">Learn More</button>
+        </div>
+        <div class="topics">
+          <span class="close">&times;</span>
+          <h4>Topics</h4>
+          <ul>
+            <li>ER Models, Relational Models</li>
+            <li>SQL Queries</li>
+            <li>Normalization</li>
+            <li>Transactions, Indexing</li>
+            <li>PL/SQL, Triggers</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="card-content">
+          <h4><i class="bi bi-braces"></i> Data Structures</h4>
+          <p>
+            Build a strong foundation in Data Structures and Algorithms to crack
+            coding interviews. This course covers arrays, linked lists, stacks,
+            queues, trees, graphs, recursion, sorting, searching, and
+            problem-solving techniques.
+          </p>
+          <h6 style="color: lightslategray">Credits: 3</h6>
+
+          <button class="btn-show-topics">Show Topics</button>
+          <button class="btn-learn">Learn More</button>
+        </div>
+        <div class="topics">
+          <span class="close">&times;</span>
+          <h4>Topics</h4>
+          <ul>
+            <li>Arrays, Linked Lists</li>
+            <li>Stacks, Queues</li>
+            <li>Trees, Graphs</li>
+            <li>Hashing, Searching, Sorting</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="card-content">
+          <h4><i class="bi bi-lightbulb-fill"></i> Aptitude</h4>
+          <p>
+            Sharpen your logical thinking and problem-solving abilities with
+            this aptitude course. It covers quantitative aptitude, logical
+            reasoning, verbal ability, puzzles, and mock tests to prepare for
+            competitive exams and interviews.
+          </p>
+          <h6 style="color: lightslategray">Credits: No Credits</h6>
+
+          <button class="btn-show-topics">Show Topics</button>
+          <button class="btn-learn">Learn More</button>
+        </div>
+        <div class="topics">
+          <span class="close">&times;</span>
+          <h4>Topics</h4>
+          <ul>
+            <li>Quantitative Aptitude</li>
+            <li>Logical Reasoning</li>
+            <li>Data Interpretation</li>
+            <li>Puzzles and Games</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="card-content">
+          <h4><i class="bi bi-python-"></i> Python</h4>
+          <p>
+            Master Python programming starting from the basics to advanced
+            concepts. This course covers data types, functions, OOP, libraries
+            like NumPy and Pandas, and real-world projects to build your
+            portfolio
+          </p>
+          <h6 style="color: lightslategray">Credits: 3</h6>
+          <button class="btn-show-topics">Show Topics</button>
+
+          <button class="btn-learn">Learn More</button>
+        </div>
+        <div class="topics">
+          <span class="close">&times;</span>
+          <h4>Topics</h4>
+          <ul>
+            <li>Syntax, Datatypes</li>
+            <li>Control Flow, Functions</li>
+            <li>OOP, Modules</li>
+            <li>File Handling</li>
+            <li>NumPy, Pandas</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="card-content">
+          <h4><i class="bi bi-cup-hot"></i> Java</h4>
+          <p>
+            Learn Java from basics to advanced level. This course covers Java
+            fundamentals, object-oriented programming (OOP), collections
+            framework, exception handling, multithreading, GUI programming, and
+            real-world application development.
+          </p>
+          <h6 style="color: lightslategray">Credits: 3</h6>
+          <button class="btn-show-topics">Show Topics</button>
+
+          <button class="btn-learn">Learn More</button>
+        </div>
+        <div class="topics">
+          <span class="close">&times;</span>
+          <h4>Topics</h4>
+          <ul>
+            <li>Basics, OOP</li>
+            <li>Collections Framework</li>
+            <li>Threads, Exceptions</li>
+            <li>File IO, JDBC</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="testimonials" class="testimonials container my-5">
+      <h2 class="text-center mb-4">
+        <i class="bi bi-chat-quote"></i> What Our Students Say
+      </h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card p-3 shadow-sm">
+            <img src="9.jpg" alt="Student Photo" />
+            <h5 class="text-start">Priya Sharma</h5>
+            <p>
+              "This platform helped me to understand concepts easily and get
+              placed in a top company!"
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-3 shadow-sm">
+            <img src="14.png" alt="Student Photo" />
+            <h5 class="text-start">Rakesh</h5>
+            <p>
+              "Well-structured courses with practical examples. Highly recommend
+              for beginners!"
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-3 shadow-sm">
+            <img src="14.png" alt="Student Photo" />
+            <h5 class="text-start">Arun Kumar</h5>
+            <p>
+              "Great learning experience. The 'Show Topics' feature makes
+              content easy to explore."
+            </p>
+          </div>
+        </div>
+      </div>
+    
+    <section id="faqs" class="container my-5">
+      <h2 class="text-center mb-4">
+        <i class="bi bi-question-circle"></i> Frequently Asked Questions
+      </h2>
+
+      <div class="accordion" id="faqAccordion">
+      
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq1">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faqCollapse1"
+            >
+              Are all the courses free to access?
+            </button>
+          </h2>
+          <div
+            id="faqCollapse1"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Yes! All courses are completely free to access.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq2">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faqCollapse2"
+            >
+              Will I receive a certificate after completing a course?
+            </button>
+          </h2>
+          <div
+            id="faqCollapse2"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Yes, certificates will be awarded upon successful completion of
+              each course.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq3">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faqCollapse3"
+            >
+              Can I access these courses on mobile devices?
+            </button>
+          </h2>
+          <div
+            id="faqCollapse3"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Absolutely! Our platform is fully mobile responsive.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq4">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faqCollapse4"
+            >
+              How can I contact support if I have doubts?
+            </button>
+          </h2>
+          <div
+            id="faqCollapse4"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              You can reach out to us via the contact form provided on our
+              website.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq5">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faqCollapse5"
+            >
+              Do you offer live sessions or recorded videos only?
+            </button>
+          </h2>
+          <div
+            id="faqCollapse5"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Currently, we provide recorded content for flexible learning. Live
+              sessions will be introduced soon.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.querySelectorAll(".btn-show-topics").forEach((btn, idx) => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".topics")[idx].style.display = "block";
+        });
+      });
+
+      document.querySelectorAll(".topics .close").forEach((closeBtn, idx) => {
+        closeBtn.addEventListener("click", () => {
+          document.querySelectorAll(".topics")[idx].style.display = "none";
+        });
+      });
+
+    </script>
+  </body>
+</html>
